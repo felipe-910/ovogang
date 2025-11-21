@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+    <link rel="stylesheet" href="login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Google Sign-In API -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+
+    <!-- JWT Decoder (necessário para ler os dados do usuário) -->
+    <script src="https://unpkg.com/jwt-decode/build/jwt-decode.js"></script>
+
+        <!-- Firebase SDKs (v8) -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+
+    <!-- Configuração e Lógica de Autenticação -->
+    <script src="firebase_config.js"></script>
+    <script src="auth.js"></script>
+
+    <title>Login</title>
+</head>
+
+<body>
+
+    <main class="container">
+        <form >
+            <h1>Login</h1>
+
+            <div class="input-box">
+                <input placeholder="Usuário" type="email" id="usuario" name="usuario@gmail.com" required>
+                <i class="bx bxs-user"></i>
+            </div>
+
+            <div class="input-box">
+                <input placeholder="Senha" type="password" id="senha" name="senha" required>
+                <i class="bx bxs-lock-alt"></i>
+            </div>
+
+            <div class="remember">
+                <label>
+                    <input type="checkbox">
+                    Lembrar senha
+                </label>
+                <a href="#">Esqueci a senha</a>
+            </div>
+
+            <button type="submit" class="login">Entrar</button>
+
+            <!-- Container para o botão do Google -->
+            <div id="google-login-button" class="google-login-button"></div>
+
+            <div class="register-link">
+                <p>Não tem conta? <a href="#">Criar conta</a></p>
+            </div>
+        </form>
+    </main>
+
+    <script src="login.js"></script>
+
+</body>
+
+</html>
